@@ -1,0 +1,17 @@
+# Im Vue-Unterordner "Portfolio"
+Portfolio/node_modules/
+Portfolio/dist/
+Portfolio/.env
+Portfolio/.env.*.local
+Portfolio/.vite
+Portfolio/.cache
+
+# IDE & Systemzeug
+Portfolio/.vscode/
+Portfolio/.idea/
+.DS_Store
+Thumbs.db
+
+# npm logs
+npm-debug.log*
+pnpm-debug.log*
