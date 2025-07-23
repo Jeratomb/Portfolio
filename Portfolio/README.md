@@ -27,3 +27,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### to push
+git push origin main; git push live main
+
