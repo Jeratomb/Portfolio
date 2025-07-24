@@ -71,7 +71,7 @@
         </p>
       </div>
         <ProjectCard
-          imgSrc="/src/assets/test.png"
+          imgSrc="/src/assets/Plakat.png"
           imgAlt="Example Image"
           title="Tailwind Fancy Card"
           description="This is a Fitness Mobile App built with React Native and Expo. It features a sleek design and aswell as some cool Features."
