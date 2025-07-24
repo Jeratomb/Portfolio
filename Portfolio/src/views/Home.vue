@@ -25,13 +25,13 @@
           class="w-20 h-20 rounded shadow"
         />
       </div>
-      <h1 class="text-3xl font-bold">🏡 Startseite</h1>
+      <h1 class="text-3xl font-bold">🏡 Home</h1>
       <p class="max-w-xl text-center text-lg text-gray-300">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod,
-        nunc ut laoreet cursus, enim erat dictum urna, nec dictum velit enim
-        euismod enim. Pellentesque habitant morbi tristique senectus et netus et
-        malesuada fames ac turpis egestas. Etiam euismod, nunc ut laoreet
-        cursus, enim erat dictum urna, nec dictum velit enim euismod enim.
+        Hey there! Welcome to my portfolio. I'm excited to share my work and
+        experiences with you. This is a place where I showcase my projects,
+        skills, and interests in web development. Feel free to explore and get
+        to know more about me. If you have any questions or just want to say hi,
+        don't hesitate to reach out!
       </p>
     </div>
     <div
@@ -51,7 +51,13 @@
       >
         <h2 class="text-2xl font-semibold mb-4">👤 About Me</h2>
         <p class="max-w-xl text-center text-gray-400 mb-8">
-          I'm a full-stack developer passionate about clean code and great UX.
+          I'm a Junior Full-Stack Developer with a passion for coding. I'm
+          currently 22 years old and have just graduated. During my studies, I
+          got to experience the work life as a SAP Developer as a Work Study for
+          TCON GmbH & Co. KG. I have worked there for about a year, gaining
+          valuable experience in software development and project management.
+          Now that I have seen the SAP side of programming, I decided to stay on
+          the better side of the fence.
         </p>
       </div>
 
@@ -64,7 +70,14 @@
           A showcase of my latest work.
         </p>
       </div>
-
+        <ProjectCard
+          imgSrc="/src/assets/test.png"
+          imgAlt="Example Image"
+          title="Tailwind Fancy Card"
+          description="This is a Fitness Mobile App built with React Native and Expo. It features a sleek design and aswell as some cool Features."
+          link="https://github.com/Jeratomb/FitMe"
+          buttonText="GitHub"
+        />
       <div
         id="contact-section"
         class="opacity-0 transition-opacity duration-1000"
@@ -80,6 +93,7 @@
 
 <script setup>
 import { onMounted, onUnmounted } from "vue";
+import ProjectCard from '../components/ProjectCard.vue'
 
 onMounted(() => {
   const nextContent = document.getElementById("next-content");
