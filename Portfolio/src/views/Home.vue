@@ -71,7 +71,7 @@
         </p>
       </div>
         <ProjectCard
-          imgSrc="/src/assets/Plakat.png"
+          :imgSrc="plakatImg"
           imgAlt="Example Image"
           title="Tailwind Fancy Card"
           description="This is a Fitness Mobile App built with React Native and Expo. It features a sleek design and aswell as some cool Features."
@@ -94,6 +94,7 @@
 <script setup>
 import { onMounted, onUnmounted } from "vue";
 import ProjectCard from '../components/ProjectCard.vue'
+import plakatImg from '@/assets/Plakat.png'
 
 onMounted(() => {
   const nextContent = document.getElementById("next-content");
