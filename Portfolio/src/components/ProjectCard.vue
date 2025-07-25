@@ -2,7 +2,7 @@
   <div
     class="max-w-sm bg-gray-800 text-white rounded-xl shadow-lg overflow-hidden transform transition hover:scale-105 hover:shadow-2xl"
   >
-    <img :src="imgSrc" :alt="imgAlt" class="w-full h-48 object-cover" />
+    <img :src="imgSrc" :alt="imgAlt" class="w-full h-full object-cover" />
 
     <div class="p-5">
       <h3 class="text-xl font-semibold mb-2">{{ title }}</h3>

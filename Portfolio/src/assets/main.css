@@ -5,7 +5,7 @@
 /* === Global Styles für Dark Portfolio === */
 
 body {
-  @apply bg-gray-950 text-gray-100 font-sans leading-relaxed;
+  @apply bg-gradient-custom text-gray-100 font-sans leading-relaxed;
 }
 
 
@@ -41,4 +41,16 @@ h1, h2, h3, h4 {
 /* Optional: smooth scroll */
 html {
   scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .bg-gradient-custom {
+    background: linear-gradient(
+      180deg,
+      #020024 0%,
+      #1111a1 38%,
+      #226fd3 65%,
+      #235288 92%
+    );
+  }
 }
