@@ -2,9 +2,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const Landing    = () => import('@/views/Landing.vue')
-const PuzzleGate = () => import('@/views/PuzzleGate.vue') // create this view if you don't have it yet
+const PuzzleGate = () => import('@/views/PuzzleGate.vue')
 const Home       = () => import('@/views/Home.vue')
-// const NotFound   = () => import('@/views/NotFound.vue')    // optional: create a simple NotFound view
+const Projects   = () => import('@/views/Projects.vue')
+const NotFound   = () => import('@/views/NotFound.vue')
 
 function hasSolvedGate() {
   let lc = false
@@ -31,7 +32,8 @@ const router = createRouter({
     { path: '/',        name: 'Landing',    component: Landing,    meta: { public: true } },
     { path: '/gate',    name: 'PuzzleGate', component: PuzzleGate, meta: { public: true } },
     { path: '/home',    name: 'Home',       component: Home,       meta: { requiresSolved: true } },
-    // { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound, meta: { public: true } },
+    { path: '/projects',name: 'Projects',   component: Projects,   meta: { requiresSolved: true } },
+    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound, meta: { public: true } },
   ],
   scrollBehavior() {
     return { top: 0 }
@@ -41,7 +43,7 @@ const router = createRouter({
 router.beforeEach((to) => {
   const solved = hasSolvedGate()
 
-  if (to.meta && to.meta.requiresSolved && !solved) {
+  if (to.matched.some(record => record.meta && record.meta.requiresSolved) && !solved) {
     return { name: 'PuzzleGate', query: { redirect: to.fullPath } }
   }
 
