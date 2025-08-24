@@ -4,21 +4,6 @@
   >
     <div class="flex flex-col items-center gap-6">
       <div class="flex gap-4 flex-wrap justify-center">
-        <img
-          src="/src/assets/test.png"
-          alt="Icon"
-          class="w-20 h-20 rounded shadow"
-        />
-        <img
-          src="/src/assets/test.png"
-          alt="Logo Asset"
-          class="w-24 h-24 rounded shadow"
-        />
-        <img
-          src="/src/assets/test.png"
-          alt="Placeholder"
-          class="w-20 h-20 rounded shadow"
-        />
       </div>
       <div class="flex justify-center items-center gap-4">
               <p class="w-full max-w-7xl text-center text-2xl text-gray-300">
