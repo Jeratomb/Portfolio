@@ -38,7 +38,6 @@ function clearGate() {
     }
   } catch (e) { /* ignore */ }
 
-  // reload so the router guard sees the change
   location.reload()
 }
 

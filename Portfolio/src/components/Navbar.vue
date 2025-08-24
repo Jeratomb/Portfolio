@@ -1,12 +1,9 @@
 <template>
   <nav class="navbar">
-    <!-- Glass bar that collapses INTO the burger -->
     <div class="bar" :class="{ open: isOpen }">
       <div class="nav-inner px-4 py-3 flex justify-between items-center">
-        <!-- Brand -->
         <RouterLink to="/" class="brand">Jeratomb</RouterLink>
 
-        <!-- Links -->
         <ul class="nav-links items-center">
           <li><RouterLink to="/projects" class="nav-link" active-class="active" @click="close">Projekte</RouterLink></li>
           <li><RouterLink to="/contact"  class="nav-link" active-class="active" @click="close">Kontakt</RouterLink></li>
@@ -15,7 +12,6 @@
       </div>
     </div>
 
-    <!-- Burger sits ABOVE the bar so it stays visible even when bar collapses -->
     <button
       class="burger"
       :class="{ open: isOpen }"
@@ -44,16 +40,13 @@ function close()  { isOpen.value = false }
 let cleanup: (() => void) | null = null
 
 onMounted(() => {
-  // Auto-open on desktop, closed on mobile
   const mq = window.matchMedia('(min-width: 768px)')
   const sync = () => { isOpen.value = mq.matches }
   sync()
   mq.addEventListener('change', sync)
 
-  // Close after route changes
   const removeAfter = router.afterEach(() => close())
 
-  // ESC to close
   const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close() }
   window.addEventListener('keydown', onKey)
 
@@ -68,20 +61,19 @@ onBeforeUnmount(() => cleanup?.())
 </script>
 
 <style scoped>
-/* Wrapper: keep transparent; the glass is on .bar */
+
 .navbar {
   position: fixed; inset: 0 auto auto 0; right: 0; top: 12px;
   margin: 0 1rem;
-  height: 64px; /* reserve space for burger even when bar collapsed */
+  height: 64px;
   z-index: 60;
-  background: transparent; /* override any global .navbar background */
+  background: transparent; 
   box-shadow: none; border: none;
 }
 
-/* Glass bar that collapses INTO the burger (right side) */
 .bar {
   position: absolute;
-  inset: 0; /* full width under burger */
+  inset: 0; 
   border-radius: 14px;
   background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
   backdrop-filter: blur(12px) saturate(130%);
@@ -99,7 +91,7 @@ onBeforeUnmount(() => cleanup?.())
   will-change: transform, opacity;
 }
 
-/* Expanded */
+
 .bar.open {
   transform: scaleX(1);
   opacity: 1;
@@ -113,22 +105,22 @@ onBeforeUnmount(() => cleanup?.())
 
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* brand at left */
+  justify-content: flex-start;
 }
 
-/* push nav links to the far right of the nav-inner */
+
 .nav-links {
   display: flex;
   gap: 2.25rem;
-  margin-left: auto; /* takes remaining space so brand stays at start */
+  margin-left: auto;
 }
 
-/* optional small left padding so brand isn't flush to the container edge */
+
 .brand {
   margin-left: 8px;
 }
 
-/* Fade + slide content during collapse/expand for polish */
+
 .brand, .nav-link {
   opacity: 0;
   transform: translateY(-2px);
@@ -138,12 +130,12 @@ onBeforeUnmount(() => cleanup?.())
   opacity: 1;
   transform: translateY(0);
 }
-/* keep stagger but slightly longer to match slower open */
+
 .bar.open .nav-link:nth-child(1) { transition-delay: .12s; }
 .bar.open .nav-link:nth-child(2) { transition-delay: .18s; }
 .bar.open .nav-link:nth-child(3) { transition-delay: .24s; }
 
-/* Link visuals */
+
 .nav-link{
   position:relative; display:inline-block; color:rgba(255,255,255,0.92);
   text-decoration:none; padding:.4rem .6rem; font-weight:600; letter-spacing:.2px;
@@ -164,7 +156,6 @@ onBeforeUnmount(() => cleanup?.())
 .nav-link.active{ color:#fff; }
 .nav-link.active::after{ transform:scaleX(1); opacity:1; background:linear-gradient(90deg, rgba(99,102,241,.95), rgba(59,130,246,.95)); }
 
-/* Burger above the bar, anchored right */
 .burger{
   position: absolute; top: 50%; right: 12px; transform: translateY(-50%);
   z-index: 2;
@@ -186,7 +177,6 @@ onBeforeUnmount(() => cleanup?.())
 .burger.open .line:nth-child(2){ opacity:0; }
 .burger.open .line:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
 
-/* Desktop: auto open, normal layout */
 @media (min-width: 768px){
   .navbar { height: 68px; }
 }
