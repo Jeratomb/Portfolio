@@ -1,11 +1,12 @@
 <template>
+  <div class="container mx-auto">
   <div
     class="flex flex-col min-h-screen p-10 mt-10"
   >
     <div class="flex flex-col items-center gap-6">
       <div class="flex gap-4 flex-wrap justify-center">
       </div>
-      <div class="flex justify-center items-center gap-4">
+      <div class="flex justify-center items-center mb-40">
               <p class="w-full max-w-7xl text-center text-2xl text-gray-300">
         Hey there! Welcome to my portfolio. I'm excited to share my work and
         experiences with you. This is a place where I showcase my projects,
@@ -34,10 +35,10 @@
     <div class="flex flex-col items-center gap-20 mt-20">
       <div
         id="about-section"
-        class="opacity-0 transition-opacity duration-1000"
+        class="opacity-0 transition-opacity duration-1000 mt-40"
       >
         <h2 class="text-4xl font-semibold mb-4">👤 About Me</h2>
-        <p class="w-full max-w-7xl text-2xl text-center text-gray-400 mb-8">
+        <p class="w-full max-w-7xl text-2xl text-left text-gray-400 mb-8">
           I'm a Junior Full-Stack Developer with a passion for coding. I'm
           currently 22 years old and have just graduated. During my studies, I
           got to experience the work life as a SAP Developer as a Work Study for
@@ -76,6 +77,7 @@
         </p>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
